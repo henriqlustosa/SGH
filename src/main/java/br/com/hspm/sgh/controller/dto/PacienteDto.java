@@ -1,18 +1,17 @@
 package br.com.hspm.sgh.controller.dto;
 
-import java.io.Console;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import br.com.hspm.sgh.model.Paciente;
 
 public class PacienteDto {
 	
 	public static Paciente paciente(Long prontuario) {
-
+		
+		
 		Paciente paciente = new Paciente();
 		
 		String sqlString = "SELECT * FROM agh.v_paciente WHERE cd_prontuario = " + prontuario;
