@@ -1,5 +1,6 @@
 package br.com.hspm.sgh.controller.dto;
 
+import java.io.Console;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -11,16 +12,12 @@ import br.com.hspm.sgh.model.Paciente;
 public class PacienteDto {
 	
 	public static Paciente paciente(Long prontuario) {
-		
-		
-		
-		
-		
+
 		Paciente paciente = new Paciente();
 		
 		String sqlString = "SELECT * FROM agh.v_paciente WHERE cd_prontuario = " + prontuario;
 		
-		try(Connection conn = DriverManager.getConnection("jdbc:postgresql://10.10.68.39:6432/hm0615_hspm", "hspm_acesso", "pwd_hspm_acesso");
+		try(Connection conn = DriverManager.getConnection("jdbc:postgresql://10.10.73.14:6433/hm0615_hspm", "hm0615_hspm", "pwd_hm0615_hspm");
              PreparedStatement preparedStatement = conn.prepareStatement(sqlString)){
 			
 			 ResultSet resultSet = preparedStatement.executeQuery();
