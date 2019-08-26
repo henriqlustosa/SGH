@@ -1,5 +1,4 @@
 package br.com.hspm.sgh.controller.dto;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -7,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-
 import br.com.hspm.sgh.model.Procedimento;
 
 public class ProcedimentoDto {
