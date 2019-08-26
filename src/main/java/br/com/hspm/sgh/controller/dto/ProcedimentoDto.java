@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import br.com.hspm.sgh.model.Procedimento;
+import br.com.hspm.sgh.persistence.Conexao;
 
 public class ProcedimentoDto {
 	public static List<Procedimento> Procedimentos(String nm_especialidade) {
@@ -17,12 +18,11 @@ public class ProcedimentoDto {
 		
 		
 		String sqlString = "SELECT * FROM agh.v_especialidade_procedimento  WHERE nm_especialidade = '" + nm_especialidade + "' limit 5";
+		Connection conn = new Conexao().getConnection();
 		
-		try(Connection conn = DriverManager.getConnection("jdbc:postgresql://10.10.73.14:6433/hm0615_hspm", "hm0615_hspm", "pwd_hm0615_hspm");
+		try{
 				
-        PreparedStatement preparedStatement = conn.prepareStatement(sqlString))
-		{
-			
+			PreparedStatement preparedStatement = conn.prepareStatement(sqlString);
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			while (resultSet.next())
@@ -34,6 +34,7 @@ public class ProcedimentoDto {
 			
 			 }
 		}
+		
 		catch (SQLException e){
             System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
         } catch (Exception e) {

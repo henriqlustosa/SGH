@@ -20,7 +20,7 @@ public class PacienteDto {
 			try {
 				preparedStatement = conn.prepareStatement(sqlString);
 				ResultSet resultSet = preparedStatement.executeQuery();
-				preparedStatement = conn.prepareStatement(sqlString);
+				
 				if (resultSet.next()) { 	
 					
 	            	paciente.setProntuatrio(resultSet.getLong("cd_prontuario"));
