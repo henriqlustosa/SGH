@@ -1,7 +1,8 @@
 package br.com.hspm.sgh.model;
 
-import java.sql.Date;
-import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.List;
+
 
 public class Consulta {
 
@@ -15,7 +16,14 @@ public class Consulta {
 	private String  nomeEquipe;
 	private String nomeProfissional;
 	private String orgao;
+	private List<Procedimento> procedimentos;
 	
+	public List<Procedimento> getProcedimentos() {
+		return procedimentos;
+	}
+	public void setProcedimentos(List<Procedimento> procedimentos) {
+		this.procedimentos = procedimentos;
+	}
 	public Long getProntuatrio() {
 		return prontuatrio;
 	}
@@ -88,6 +96,7 @@ public class Consulta {
 		result = prime * result + ((nomeEspecialidade == null) ? 0 : nomeEspecialidade.hashCode());
 		result = prime * result + ((nomeProfissional == null) ? 0 : nomeProfissional.hashCode());
 		result = prime * result + ((orgao == null) ? 0 : orgao.hashCode());
+		result = prime * result + ((procedimentos == null) ? 0 : procedimentos.hashCode());
 		result = prime * result + ((prontuatrio == null) ? 0 : prontuatrio.hashCode());
 		result = prime * result + ((sexo == null) ? 0 : sexo.hashCode());
 		return result;
@@ -141,6 +150,11 @@ public class Consulta {
 				return false;
 		} else if (!orgao.equals(other.orgao))
 			return false;
+		if (procedimentos == null) {
+			if (other.procedimentos != null)
+				return false;
+		} else if (!procedimentos.equals(other.procedimentos))
+			return false;
 		if (prontuatrio == null) {
 			if (other.prontuatrio != null)
 				return false;
@@ -152,6 +166,7 @@ public class Consulta {
 		} else if (!sexo.equals(other.sexo))
 			return false;
 		return true;
-	}	
+	}
+
 
 }

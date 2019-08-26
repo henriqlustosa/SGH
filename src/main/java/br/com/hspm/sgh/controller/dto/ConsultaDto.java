@@ -5,8 +5,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.hspm.sgh.model.Consulta;
+import br.com.hspm.sgh.model.Procedimento;
 
 
 public class ConsultaDto {
@@ -40,6 +43,13 @@ public class ConsultaDto {
         } catch (Exception e) {
             e.printStackTrace();
         }
+		List<Procedimento> procedimentos = new ArrayList<Procedimento>();
+		 
+		procedimentos = ProcedimentoDto.Procedimentos(consulta.getNomeEspecialidade());
+		
+		consulta.setProcedimentos(procedimentos);
+		
+		
 		
 		return consulta;
 	}
