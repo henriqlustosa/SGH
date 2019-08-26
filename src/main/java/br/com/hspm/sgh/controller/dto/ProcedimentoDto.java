@@ -13,7 +13,7 @@ public class ProcedimentoDto {
 		
 		
 		List<Procedimento> procedimentos = new ArrayList<Procedimento>();
-		Procedimento procedimento = new Procedimento();
+		
 		
 		
 		String sqlString = "SELECT * FROM agh.v_especialidade_procedimento  WHERE nm_especialidade = '" + nm_especialidade + "' limit 5";
@@ -27,7 +27,7 @@ public class ProcedimentoDto {
 
 			while (resultSet.next())
 			{ 	
-					
+				Procedimento procedimento = new Procedimento();	
 				procedimento.setCd_procedimento(resultSet.getLong("cd_procedimento_sus"));
 				procedimento.setDc_procedimento(resultSet.getString("dc_procedimento_sus"));
 				procedimentos.add(procedimento);
