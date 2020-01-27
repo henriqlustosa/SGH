@@ -3,6 +3,7 @@ package br.com.hspm.sgh.model;
 public class Procedimento {
 	private Long cd_procedimento;
 	private String dc_procedimento;
+	
 	public String getDc_procedimento() {
 		return dc_procedimento;
 	}
@@ -15,6 +16,7 @@ public class Procedimento {
 	public void setCd_procedimento(Long cd_procedimento) {
 		this.cd_procedimento = cd_procedimento;
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

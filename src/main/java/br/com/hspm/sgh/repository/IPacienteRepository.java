@@ -3,10 +3,10 @@ package br.com.hspm.sgh.repository;
 import java.util.List;
 
 
-import br.com.hspm.sgh.model.Paciente;
+import br.com.hspm.sgh.model.Cartao;
 
 public interface IPacienteRepository{
 
-	List<Paciente> findPacienteProntuario(String prontuario);
+	List<Cartao> findPacienteProntuario(String prontuario);
 
 }
